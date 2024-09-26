@@ -1,0 +1,40 @@
+#include<LiquidCrystal.h>
+
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+void setup()
+{
+  pinMode(6,OUTPUT);
+  pinMode(7,OUTPUT);
+  pinMode(8,OUTPUT);
+  lcd.begin(16, 2);
+  lcd.setCursor(0,0);
+  lcd.print("The Temperature is:");
+}
+
+void loop()
+{
+  lcd.setCursor(0,0);
+  lcd.print("The Temperature is:");
+  float value=analogRead(A0);
+  value=value*4.68/1024;
+  float celcius=(value-0.5)*100;
+  lcd.setCursor(0,1);
+  lcd.print(celcius);
+  float i=celcius;
+  if (i<=25){
+    digitalWrite(8,LOW);
+    digitalWrite(7,LOW);
+    digitalWrite(6,HIGH);
+  }
+  else if (i>=26 && i<90){
+    digitalWrite(8,LOW);
+    digitalWrite(6,LOW);
+    digitalWrite(7,HIGH);
+  }
+  else{
+    digitalWrite(7,LOW);
+    digitalWrite(6,LOW);
+    digitalWrite(8,HIGH);
+      }
+
+  }
