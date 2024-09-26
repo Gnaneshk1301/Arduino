@@ -1,0 +1,17 @@
+void setup() {
+  pinMode(8, OUTPUT);
+  pinMode(7, INPUT);
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  if (digitalRead((7))==1){
+    digitalWrite(8,HIGH);
+  }
+  else if (digitalRead((7))==0){
+    digitalWrite(8,LOW);
+  }
+  // put your main code here, to run repeatedly:
+
+}
