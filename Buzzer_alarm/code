@@ -1,0 +1,17 @@
+void setup() {
+  pinMode(2, INPUT);
+  pinMode(4, OUTPUT);
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  if (digitalRead((2))==1){
+    digitalWrite(4, HIGH);
+  }
+  else{
+    digitalWrite(4, LOW);
+  }
+  // put your main code here, to run repeatedly:
+
+}
